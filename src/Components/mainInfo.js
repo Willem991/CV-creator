@@ -4,8 +4,7 @@ import "./mainInfo.css"
 const MainInfo = (props) => {
 
     return(
-        <div>
-            <div id="infoForm">
+            <div id="mainDiv1">
                     <label htmlFor="name">Name:</label>
                     <input type="text" id="name" onChange={props.updateName}/>
                     <label htmlFor="surname">Surname:</label>
@@ -21,7 +20,6 @@ const MainInfo = (props) => {
                     <label htmlFor="phone">Phone number:</label>
                     <input type="number" id="phone" onChange={props.updatePhone}/>
             </div>
-        </div>
     );
 };
 

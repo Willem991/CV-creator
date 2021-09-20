@@ -1,0 +1,52 @@
+#CVinfoDiv{
+    display: grid;
+
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: 50px 10px 10px 20px;
+}
+
+#CVname{
+    display: grid;
+    grid-column-start: 1;
+    grid-row-start: 1;
+    font-size: 30px;
+    text-align: end;
+    margin-right: 10px;
+}
+
+#CVsurname{
+    grid-column-start: 2;
+    grid-row-start: 1;
+    font-size: 30px;
+    text-align: start;
+}
+
+#CVaddress{
+    grid-column-start: 1;
+    grid-row-start: 2;
+    font-size: 10px;
+    text-align: end;
+}
+
+#CVcity{
+    grid-column-start: 2;
+    grid-row-start: 2;
+    font-size: 10px;
+    margin-left: 5px ;
+}
+
+#CVprovince{
+    grid-column-start: 2;
+    grid-row-start: 2;
+    font-size: 10px;
+    text-align: start;
+    margin-left: 70px;
+}
+
+#CVemail{
+    text-align: center;
+}
+
+#CVphone{
+    text-align: center;
+}

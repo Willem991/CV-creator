@@ -3,7 +3,7 @@ import './eductation.css'
 
 const Education = (props) => {
     return(
-        <div id='mainDiv'>
+        <div id='mainDiv3'>
             <label htmlFor="degree">Degree:</label>
             <input id="degree" type="text"/>
             <label htmlFor="university">School/University:</label>

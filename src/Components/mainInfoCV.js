@@ -1,27 +1,28 @@
 import React from "react";
+import './mainInfoCV.css'
 
 const CVMainInfo = (props) => {
     return(
-        <div>
-            <p id='name'>
+        <div id="CVinfoDiv">
+            <p id='CVname'>
                 {props.name}
             </p>
-            <p id='surname'>
+            <p id='CVsurname'>
                 {props.surname}
             </p>
-            <p id='address'>
+            <p id='CVaddress'>
                 {props.address}
             </p>
-            <p id='city'>
+            <p id='CVcity'>
                 {props.city}
             </p>
-            <p id='province'>
+            <p id='CVprovince'>
                 {props.province}
             </p>
-            <p id='email'>
+            <p id='CVemail'>
                 {props.email}
             </p>
-            <p id='phone'>
+            <p id='CVphone'>
                 {props.phone}
             </p>
         </div>

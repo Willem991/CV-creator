@@ -4,6 +4,7 @@ import CVMainInfo from "./Components/mainInfoCV";
 import './App.css';
 import Education from "./Components/education";
 import Experience from "./Components/experience";
+import ExperienceCV from "./Components/experienceCV";
 
 class App extends Component{
   constructor(){
@@ -18,6 +19,12 @@ class App extends Component{
     this.handleChangeEmail = this.handleChangeEmail.bind(this);
     this.handleChangePhone = this.handleChangePhone.bind(this);
 
+    //Experience function Binds
+    this.handleChangePosition = this.handleChangePosition.bind(this);
+    this.handleChangeWorkplace = this.handleChangeWorkplace.bind(this);
+    this.handleChangeWorkFrom = this.handleChangeWorkFrom.bind(this);
+    this.handleChangeWorkTo = this.handleChangeWorkTo.bind(this);
+
     this.state = {
       name:'',
       surname:'',
@@ -26,8 +33,14 @@ class App extends Component{
       province:'',
       email:'',
       phone:'',
-      edlist:'',
-      i:1,
+      position:'',
+      workplace:'',
+      workFrom:'',
+      workTo:'',
+      degree:'',
+      uni:'',
+      degreeFrom:'',
+      degreeTo:'',
     };
   };
 
@@ -74,30 +87,70 @@ class App extends Component{
     });
   };
 
+  //Handles for Experience
+  handleChangePosition(e){
+    this.setState({
+      position: e.target.value,
+    });
+  };
+
+  handleChangeWorkplace(e){
+    this.setState({
+      workplace: e.target.value,
+    });
+  };
+
+  handleChangeWorkFrom(e){
+    this.setState({
+      workFrom: e.target.value,
+    });
+  };
+
+  handleChangeWorkTo(e){
+    this.setState({
+      workTo: e.target.value,
+    });
+  };
+
   render(){
     return(
       <div className="mainBody">
-        <MainInfo 
-            updateName = {this.handleChangeName}
-            updateSurname = {this.handleChangeSurname}
-            updateAddress = {this.handleChangeAddress}
-            updateCity = {this.handleChangeCity}
-            updateProvince = {this.handleChangeProvince}
-            updateEmail = {this.handleChangeEmail}
-            updatePhone = {this.handleChangePhone}
-            >
-        </MainInfo>
-        <Education></Education>
-        <Experience></Experience>
-        <CVMainInfo 
-            name={this.state.name}
-            surname={this.state.surname}
-            address={this.state.address}
-            city={this.state.city}
-            province={this.state.province}
-            email={this.state.email}
-            phone={this.state.phone}
-        ></CVMainInfo>
+        <div id="CVInfo">
+          <MainInfo 
+              updateName = {this.handleChangeName}
+              updateSurname = {this.handleChangeSurname}
+              updateAddress = {this.handleChangeAddress}
+              updateCity = {this.handleChangeCity}
+              updateProvince = {this.handleChangeProvince}
+              updateEmail = {this.handleChangeEmail}
+              updatePhone = {this.handleChangePhone}
+              >
+          </MainInfo>
+          <Education></Education>
+          <Experience
+              updatePosition = {this.handleChangePosition}
+              updateWorkplace = {this.handleChangeWorkplace}
+              updateFromDate = {this.handleChangeWorkFrom}
+              updateToDate = {this.handleChangeWorkTo}
+          ></Experience>
+        </div>
+        <div id="CV">
+          <CVMainInfo 
+              name={this.state.name}
+              surname={this.state.surname}
+              address={this.state.address}
+              city={this.state.city}
+              province={this.state.province}
+              email={this.state.email}
+              phone={this.state.phone}
+          ></CVMainInfo>
+          <ExperienceCV
+              position = {this.state.position}
+              workplace = {this.state.workplace}
+              from = {this.state.workFrom}
+              to = {this.state.workTo}
+          ></ExperienceCV>
+        </div>
       </div>
     );
   };
