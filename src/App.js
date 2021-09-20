@@ -2,12 +2,14 @@ import React, {Component} from "react";
 import MainInfo from "./Components/mainInfo";
 import CVMainInfo from "./Components/mainInfoCV";
 import './App.css';
+import Education from "./Components/education";
+import Experience from "./Components/experience";
 
 class App extends Component{
   constructor(){
     super();
 
-
+    //MainInfo function Binds
     this.handleChangeName = this.handleChangeName.bind(this);
     this.handleChangeSurname = this.handleChangeSurname.bind(this);
     this.handleChangeAddress = this.handleChangeAddress.bind(this);
@@ -24,9 +26,12 @@ class App extends Component{
       province:'',
       email:'',
       phone:'',
+      edlist:'',
+      i:1,
     };
   };
 
+  //Handles for the MainInfo
   handleChangeName(e){
     this.setState({
       name: e.target.value,
@@ -82,14 +87,16 @@ class App extends Component{
             updatePhone = {this.handleChangePhone}
             >
         </MainInfo>
+        <Education></Education>
+        <Experience></Experience>
         <CVMainInfo 
-        name={this.state.name}
-        surname={this.state.surname}
-        address={this.state.address}
-        city={this.state.city}
-        province={this.state.province}
-        email={this.state.email}
-        phone={this.state.phone}
+            name={this.state.name}
+            surname={this.state.surname}
+            address={this.state.address}
+            city={this.state.city}
+            province={this.state.province}
+            email={this.state.email}
+            phone={this.state.phone}
         ></CVMainInfo>
       </div>
     );
