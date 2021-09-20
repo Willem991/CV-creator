@@ -5,6 +5,7 @@ import './App.css';
 import Education from "./Components/education";
 import Experience from "./Components/experience";
 import ExperienceCV from "./Components/experienceCV";
+import EducationCV from "./Components/educationCV";
 
 class App extends Component{
   constructor(){
@@ -24,6 +25,12 @@ class App extends Component{
     this.handleChangeWorkplace = this.handleChangeWorkplace.bind(this);
     this.handleChangeWorkFrom = this.handleChangeWorkFrom.bind(this);
     this.handleChangeWorkTo = this.handleChangeWorkTo.bind(this);
+
+    //Education function Binds
+    this.handleChangeDegree = this.handleChangeDegree.bind(this);
+    this.handleChangeUni = this.handleChangeUni.bind(this);
+    this.handleChangeDegreeFrom = this.handleChangeDegreeFrom.bind(this);
+    this.handleChangeDegreeTo = this.handleChangeDegreeTo.bind(this);
 
     this.state = {
       name:'',
@@ -112,6 +119,31 @@ class App extends Component{
     });
   };
 
+  //Handles for Education
+  handleChangeDegree(e){
+    this.setState({
+      degree: e.target.value,
+    });
+  };
+
+  handleChangeUni(e){
+    this.setState({
+      uni: e.target.value,
+    });
+  };
+
+  handleChangeDegreeFrom(e){
+    this.setState({
+      degreeFrom: e.target.value,
+    });
+  };
+
+  handleChangeDegreeTo(e){
+    this.setState({
+      degreeTo: e.target.value,
+    });
+  }
+
   render(){
     return(
       <div className="mainBody">
@@ -126,7 +158,12 @@ class App extends Component{
               updatePhone = {this.handleChangePhone}
               >
           </MainInfo>
-          <Education></Education>
+          <Education
+              updateDegree = {this.handleChangeDegree}
+              updateUni = {this.handleChangeUni}
+              updateDegreeFrom = {this.handleChangeDegreeFrom}
+              updateDegreeTo = {this.handleChangeDegreeTo}
+          ></Education>
           <Experience
               updatePosition = {this.handleChangePosition}
               updateWorkplace = {this.handleChangeWorkplace}
@@ -144,6 +181,12 @@ class App extends Component{
               email={this.state.email}
               phone={this.state.phone}
           ></CVMainInfo>
+          <EducationCV
+              degree = {this.state.degree}
+              uni = {this.state.uni}
+              from = {this.state.degreeFrom}
+              to = {this.state.degreeTo}
+          ></EducationCV>
           <ExperienceCV
               position = {this.state.position}
               workplace = {this.state.workplace}
