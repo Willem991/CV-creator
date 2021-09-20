@@ -1,19 +1,17 @@
 import React from "react";
+import './experienceCV.css'
 
 const ExperienceCV = (props) => {
     return(
-        <div>
-            <p>
+        <div id='workDiv'>
+            <p id="CVposition">
                 {props.position}
             </p>
-            <p>
+            <p id = 'CVworkplace'>
                 {props.workplace}
             </p>
-            <p>
-                {props.from}
-            </p>
-            <p>
-                {props.to}
+            <p id = 'CVworkDate'>
+                {props.from + ' - ' + props.to}
             </p>
         </div>
     );

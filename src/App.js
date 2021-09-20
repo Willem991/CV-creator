@@ -172,6 +172,7 @@ class App extends Component{
           ></Experience>
         </div>
         <div id="CV">
+          <h1>Curriculum Vitae </h1>
           <CVMainInfo 
               name={this.state.name}
               surname={this.state.surname}
@@ -181,12 +182,18 @@ class App extends Component{
               email={this.state.email}
               phone={this.state.phone}
           ></CVMainInfo>
+          <h1>
+            Education
+          </h1>
           <EducationCV
               degree = {this.state.degree}
               uni = {this.state.uni}
               from = {this.state.degreeFrom}
               to = {this.state.degreeTo}
           ></EducationCV>
+          <h1>
+            Experience
+          </h1>
           <ExperienceCV
               position = {this.state.position}
               workplace = {this.state.workplace}

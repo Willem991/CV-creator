@@ -1,0 +1,27 @@
+#educationCVDiv{
+    display: grid;
+
+    grid-template-columns: 100px auto;
+    grid-template-rows: 30px 30px;
+};
+
+#CVdegree{
+    display: grid;
+
+    grid-column-start: 2;
+    grid-row-start: 1;
+}
+
+#CVuni{
+    display: grid;
+
+    grid-column-start: 2;
+    grid-row-start: 2;
+}
+
+#CVdegreeDate{
+    display: grid;
+
+    grid-column-start: 1;
+    grid-row-start: 1;
+}

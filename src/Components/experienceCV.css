@@ -1,0 +1,27 @@
+#workDiv{
+    display: grid;
+
+    grid-template-columns: 100px auto;
+    grid-template-rows: 30px 30px;
+}
+
+#CVposition{
+    display: grid;
+
+    grid-column-start: 2;
+    grid-row-start: 1;
+}
+
+#CVworkplace{
+    display: grid;
+
+    grid-column-start: 2;
+    grid-row-start: 2;
+}
+
+#CVworkDate{
+    display: grid;
+
+    grid-column-start: 1;
+    grid-row-start: 1;
+}

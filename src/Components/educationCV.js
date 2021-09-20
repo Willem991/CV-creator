@@ -1,22 +1,20 @@
 import React from "react";
+import './educationCV.css'
 
-const educationCV = (props) => {
+const EducationCV = (props) => {
     return(
-        <div>
-            <p>
+        <div id='educationCVDiv'>
+            <p id='CVdegree'>
                 {props.degree}
             </p>
-            <p>
+            <p id='CVuni'>
                 {props.uni}
             </p>
-            <p>
-                {props.from}
-            </p>
-            <p>
-                {props.to}
+            <p id = 'CVdegreeDate'>
+                {props.from + ' - ' + props.to}
             </p>
         </div>
     );
 };
 
-export default educationCV;
+export default EducationCV;

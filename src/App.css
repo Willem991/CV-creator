@@ -37,7 +37,11 @@
 #CV{
   display: grid;
 
+  grid-template-rows: 40px 150px 50px 100px 50px 100px;
+
   justify-self: center;
+
+  justify-items: center;
 
   grid-column-start: 2;
   grid-row-start: 1;
@@ -52,3 +56,6 @@
   border-style: double;
 }
 
+.lbleditor{
+  margin-top: 10px;
+}
